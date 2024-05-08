@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/taaharauf/Documents/UniLabs/DB Project/OnlyTeachers/MvcMovie.csproj": {}
+    "/Users/taaharauf/Documents/UniLabs/DB Project/OnlyTeachers 2/MvcMovie.csproj": {}
   },
   "projects": {
-    "/Users/taaharauf/Documents/UniLabs/DB Project/OnlyTeachers/MvcMovie.csproj": {
+    "/Users/taaharauf/Documents/UniLabs/DB Project/OnlyTeachers 2/MvcMovie.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/taaharauf/Documents/UniLabs/DB Project/OnlyTeachers/MvcMovie.csproj",
+        "projectUniqueName": "/Users/taaharauf/Documents/UniLabs/DB Project/OnlyTeachers 2/MvcMovie.csproj",
         "projectName": "MvcMovie",
-        "projectPath": "/Users/taaharauf/Documents/UniLabs/DB Project/OnlyTeachers/MvcMovie.csproj",
+        "projectPath": "/Users/taaharauf/Documents/UniLabs/DB Project/OnlyTeachers 2/MvcMovie.csproj",
         "packagesPath": "/Users/taaharauf/.nuget/packages/",
-        "outputPath": "/Users/taaharauf/Documents/UniLabs/DB Project/OnlyTeachers/obj/",
+        "outputPath": "/Users/taaharauf/Documents/UniLabs/DB Project/OnlyTeachers 2/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/taaharauf/.nuget/NuGet/NuGet.Config"
@@ -77,6 +77,10 @@
             "Microsoft.Extensions.DependencyInjection": {
               "target": "Package",
               "version": "[7.0.0, )"
+            },
+            "Syncfusion.EJ2.AspNet.Core": {
+              "target": "Package",
+              "version": "[25.2.3, )"
             }
           },
           "imports": [

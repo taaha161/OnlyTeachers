@@ -60,6 +60,7 @@ namespace OT.Pages.Contacts
             {
                 return Forbid();
             }
+            Post.content = Request.Form["RichTextEditor"];
 
             Context.Post.Add(Post);
             await Context.SaveChangesAsync();

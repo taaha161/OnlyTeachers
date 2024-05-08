@@ -32,7 +32,7 @@
             @Html.DisplayNameFor(model => model.Post.content)
         </dt>
               <dd>
-            @Html.DisplayFor(model => model.Post.content)
+            @Html.Raw(System.Net.WebUtility.HtmlDecode(Model.Post.content))
         </dd>
                <dt>
             @Html.DisplayNameFor(model => model.Post.subscribers)

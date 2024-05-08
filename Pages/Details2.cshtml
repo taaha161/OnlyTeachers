@@ -25,7 +25,7 @@
             @Html.DisplayFor(model => model.Post.Price)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Post.content)
+           @Html.Raw(System.Net.WebUtility.HtmlDecode(Model.Post.content))
         </dt>
     </dl>
 </div>
