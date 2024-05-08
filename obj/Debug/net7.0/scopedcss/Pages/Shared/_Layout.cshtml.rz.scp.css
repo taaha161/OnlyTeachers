@@ -5,6 +5,10 @@ a.navbar-brand[b-jzide5g70a] {
   white-space: normal;
   text-align: center;
   word-break: break-all;
+  color: #fff;
+}
+.navbar[b-jzide5g70a]{
+  background-color: #0077cc;
 }
 
 a[b-jzide5g70a] {

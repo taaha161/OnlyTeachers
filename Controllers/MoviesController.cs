@@ -1,20 +1,22 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
+
 using Microsoft.EntityFrameworkCore;
-using MvcMovie.Data;
-using MvcMovie.Models;
+
+
+using OT.Data;
+using OT.Models;
 
 namespace MvcMovie.Controllers
 {
+    [Authorize]
+    [AllowAnonymous] 
     public class MoviesController : Controller
     {
-        private readonly MvcMovieContext _context;
+        private readonly OTContext _context;
 
-        public MoviesController(MvcMovieContext context)
+        public MoviesController(OTContext context)
         {
             _context = context;
         }
@@ -24,7 +26,7 @@ namespace MvcMovie.Controllers
         {
               return _context.Post != null ? 
                           View(await _context.Post.ToListAsync()) :
-                          Problem("Entity set 'MvcMovieContext.Post'  is null.");
+                          Problem("Entity set 'OTContext.Post'  is null.");
         }
 
         // GET: Movies/Details/5
@@ -183,7 +185,7 @@ namespace MvcMovie.Controllers
         {
             if (_context.Post == null)
             {
-                return Problem("Entity set 'MvcMovieContext.Post'  is null.");
+                return Problem("Entity set 'OTContext.Post'  is null.");
             }
             var post = await _context.Post.FindAsync(id);
             if (post != null)

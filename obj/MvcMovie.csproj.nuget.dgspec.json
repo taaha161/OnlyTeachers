@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/taaharauf/Documents/UniLabs/DB Project/MvcMovie/MvcMovie.csproj": {}
+    "/Users/taaharauf/Documents/UniLabs/DB Project/OnlyTeachers/MvcMovie.csproj": {}
   },
   "projects": {
-    "/Users/taaharauf/Documents/UniLabs/DB Project/MvcMovie/MvcMovie.csproj": {
+    "/Users/taaharauf/Documents/UniLabs/DB Project/OnlyTeachers/MvcMovie.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/taaharauf/Documents/UniLabs/DB Project/MvcMovie/MvcMovie.csproj",
+        "projectUniqueName": "/Users/taaharauf/Documents/UniLabs/DB Project/OnlyTeachers/MvcMovie.csproj",
         "projectName": "MvcMovie",
-        "projectPath": "/Users/taaharauf/Documents/UniLabs/DB Project/MvcMovie/MvcMovie.csproj",
+        "projectPath": "/Users/taaharauf/Documents/UniLabs/DB Project/OnlyTeachers/MvcMovie.csproj",
         "packagesPath": "/Users/taaharauf/.nuget/packages/",
-        "outputPath": "/Users/taaharauf/Documents/UniLabs/DB Project/MvcMovie/obj/",
+        "outputPath": "/Users/taaharauf/Documents/UniLabs/DB Project/OnlyTeachers/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/taaharauf/.nuget/NuGet/NuGet.Config"
@@ -38,25 +38,45 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "Microsoft.AspNet.Identity.EntityFramework": {
+              "target": "Package",
+              "version": "[2.2.4, )"
+            },
+            "Microsoft.AspNetCore.Authorization": {
+              "target": "Package",
+              "version": "[7.0.4, )"
+            },
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[7.0.18, )"
+              "version": "[7.0.4, )"
+            },
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.2.0, )"
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[7.0.18, )"
+              "version": "[7.0.4, )"
             },
             "Microsoft.AspNetCore.Identity.UI": {
               "target": "Package",
-              "version": "[7.0.18, )"
+              "version": "[7.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.4, )"
             },
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
-              "version": "[7.0.18, )"
+              "version": "[7.0.4, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "target": "Package",
-              "version": "[7.0.18, )"
+              "version": "[7.0.4, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[7.0.0, )"
             }
           },
           "imports": [

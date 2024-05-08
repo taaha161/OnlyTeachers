@@ -1,0 +1,78 @@
+@page
+@model OT.Pages.Contacts.SubscriptionModel
+@{
+    ViewData["Title"] = "Subscription";
+}
+
+<h2>Subscribe to our service</h2>
+
+<form id="subscription-form">
+    <div class="form-group">
+        <label for="card-element">
+            Credit or debit card
+        </label>
+        <div id="card-element">
+            <!-- A Stripe Element will be inserted here. -->
+        </div>
+
+        <!-- Used to display form errors. -->
+      @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+{
+    <div class="alert alert-danger" role="alert">
+        @Model.ErrorMessage
+    </div>
+}
+    </div>
+
+    <button id="submit-button" class="btn btn-primary">
+        Subscribe
+    </button>
+</form>
+
+@section Scripts {
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+        // Create a Stripe client.
+        var stripe = Stripe('pk_test_51PE6752KMCEmWUIPuLdyfcYIMldTjWH3HDU6AWbOptJ8CtxKt9yVh82r5gFBqbRY09p2qjp8OTbE02ibUW94jyGv00kHAj8nY7');
+
+        // Create an instance of Elements.
+        var elements = stripe.elements();
+
+        // Create an instance of the card Element.
+        var card = elements.create('card');
+
+        // Add an instance of the card Element into the `card-element` div.
+        card.mount('#card-element');
+
+        // Handle form submission.
+        var form = document.getElementById('subscription-form');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            stripe.createToken(card).then(function(result) {
+                if (result.error) {
+                    // Inform the user if there was an error.
+                    var errorElement = document.getElementById('card-errors');
+                    errorElement.textContent = result.error.message;
+                } else {
+                    // Send the token to your server.
+                    stripeTokenHandler(result.token);
+                }
+            });
+        });
+
+        // Submit the form with the token ID.
+        function stripeTokenHandler(token) {
+            // Insert the token ID into the form so it gets submitted to the server.
+            var form = document.getElementById('subscription-form');
+            var hiddenInput = document.createElement('input');
+            hiddenInput.setAttribute('type', 'hidden');
+            hiddenInput.setAttribute('name', 'stripeToken');
+            hiddenInput.setAttribute('value', token.id);
+            form.appendChild(hiddenInput);
+
+            // Submit the form.
+            form.submit();
+        }
+    </script>
+}
