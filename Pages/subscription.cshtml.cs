@@ -1,38 +1,45 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Authorization;
+using OT.Data;
+using OT.Areas.Identity.Data;
+using Microsoft.AspNetCore.Identity;
+using System.Threading.Tasks;
 
 namespace OT.Pages.Contacts
 {
+    [Authorize]
     public class SubscriptionModel : PageModel
     {
-        [BindProperty]
-        public string ErrorMessage { get; set; } // Property to hold error message
+        private readonly OTContext _context;
+        private readonly UserManager<OTUser> _userManager;
 
-        public void OnGet()
+        public SubscriptionModel(OTContext context, UserManager<OTUser> userManager)
         {
-            // Initialize error message
-            ErrorMessage = "";
+            _context = context;
+            _userManager = userManager;
         }
 
-        public IActionResult OnPost(string stripeToken)
+        // GET request handler
+        public void OnGet()
         {
-            // Check if there's a problem with the credit card information
-            if (string.IsNullOrEmpty(stripeToken))
-            {
-                // Set error message
-                ErrorMessage = "There was an issue with your payment. Please check your card details and try again.";
+            // Nothing needs to be done here for a simple GET request
+        }
 
-                // Return PageResult with error message
-                return Page();
-            }
+        // POST request handler
+        public async Task<IActionResult> OnPostAsync()
+        {
+            // Get the current user
+            var currentUser = await _userManager.GetUserAsync(User);
 
-            // If everything is fine, continue with the subscription process
-            // For example:
-            // var stripeToken = Request.Form["stripeToken"];
-            // Use the token to create a new subscription with Stripe API.
+            // Update the Paid attribute to 1
+            currentUser.Paid = 1;
 
-            // Redirect to a different page if the subscription is successful
-            return RedirectToPage("/Contacts/Index");
+            // Save changes to the database
+            await _userManager.UpdateAsync(currentUser);
+
+            // Redirect to a success page or wherever needed
+            return RedirectToPage("/Index");
         }
     }
 }

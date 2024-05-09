@@ -10,6 +10,8 @@ using OT.Authorization;
 using OT.Models;
 using OT.Areas.Identity.Data;
 using Microsoft.AspNetCore.Mvc.Authorization;
+using Stripe;
+using Stripe.Checkout;
 
 // snippet3 used in next define
 #region snippet4  
@@ -89,7 +91,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Movies}/{action=Index}/{id?}");
+    pattern: "/{action=Index}/{id?}");
 
 app.MapRazorPages();
 

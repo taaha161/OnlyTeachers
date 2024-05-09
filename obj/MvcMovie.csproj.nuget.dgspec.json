@@ -78,6 +78,10 @@
               "target": "Package",
               "version": "[7.0.0, )"
             },
+            "Stripe.net": {
+              "target": "Package",
+              "version": "[44.5.0, )"
+            },
             "Syncfusion.EJ2.AspNet.Core": {
               "target": "Package",
               "version": "[25.2.3, )"

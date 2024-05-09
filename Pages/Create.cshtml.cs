@@ -25,8 +25,13 @@ namespace OT.Pages.Contacts
         }
         #endregion
 
-        public IActionResult OnGet()
+        public async Task<IActionResult> OnGet() 
         {
+            var currentUserID = UserManager.GetUserId(User);
+            var userObj = await UserManager.FindByIdAsync(currentUserID);
+            if(userObj.UserType == "Student"){
+                return Forbid();
+            }
             Post = new Post
             {
                 Title = "This is My first post",

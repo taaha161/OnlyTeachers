@@ -11,6 +11,7 @@ using OT.Models;
 using System.Linq;
 using System.Threading.Tasks;
 using ContactManager.Authorization;
+using System.Text.RegularExpressions;
 
 namespace OT.Pages.Contacts
 {
@@ -24,6 +25,34 @@ namespace OT.Pages.Contacts
             UserManager<OTUser> userManager)
             : base(context, authorizationService, userManager)
         {
+        }
+
+            public string GetPlainText(string content)
+        {
+            if(content == null){
+                return string.Empty;
+            }
+            if (HasHtmlTags(content))
+            {
+                // Decode HTML entities
+                string decodedHtml = System.Net.WebUtility.HtmlDecode(content);
+                // Remove HTML tags using Regex
+                string plainText = Regex.Replace(decodedHtml, "<[^>]*>", "");
+                // Trim whitespace
+                plainText = plainText.Trim();
+                return plainText;
+            }
+            else
+            {
+                // Return the content as is if it doesn't contain HTML tags
+                return content;
+            }
+        }
+
+        private bool HasHtmlTags(string content)
+        {
+            // Check if the content contains any HTML tags
+            return Regex.IsMatch(content, @"<[^>]+>");
         }
 
         [BindProperty]

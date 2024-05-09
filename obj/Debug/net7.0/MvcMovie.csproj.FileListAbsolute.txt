@@ -265,3 +265,14 @@
 /Users/taaharauf/Documents/UniLabs/DB Project/OnlyTeachers 2/obj/Debug/net7.0/MvcMovie.pdb
 /Users/taaharauf/Documents/UniLabs/DB Project/OnlyTeachers 2/obj/Debug/net7.0/MvcMovie.genruntimeconfig.cache
 /Users/taaharauf/Documents/UniLabs/DB Project/OnlyTeachers 2/obj/Debug/net7.0/ref/MvcMovie.dll
+/Users/taaharauf/Documents/UniLabs/DB Project/OnlyTeachers 2/bin/Debug/net7.0/Microsoft.Win32.SystemEvents.dll
+/Users/taaharauf/Documents/UniLabs/DB Project/OnlyTeachers 2/bin/Debug/net7.0/Stripe.net.dll
+/Users/taaharauf/Documents/UniLabs/DB Project/OnlyTeachers 2/bin/Debug/net7.0/System.Configuration.ConfigurationManager.dll
+/Users/taaharauf/Documents/UniLabs/DB Project/OnlyTeachers 2/bin/Debug/net7.0/System.Drawing.Common.dll
+/Users/taaharauf/Documents/UniLabs/DB Project/OnlyTeachers 2/bin/Debug/net7.0/System.Security.Cryptography.ProtectedData.dll
+/Users/taaharauf/Documents/UniLabs/DB Project/OnlyTeachers 2/bin/Debug/net7.0/System.Windows.Extensions.dll
+/Users/taaharauf/Documents/UniLabs/DB Project/OnlyTeachers 2/bin/Debug/net7.0/runtimes/win/lib/net6.0/Microsoft.Win32.SystemEvents.dll
+/Users/taaharauf/Documents/UniLabs/DB Project/OnlyTeachers 2/bin/Debug/net7.0/runtimes/unix/lib/net6.0/System.Drawing.Common.dll
+/Users/taaharauf/Documents/UniLabs/DB Project/OnlyTeachers 2/bin/Debug/net7.0/runtimes/win/lib/net6.0/System.Drawing.Common.dll
+/Users/taaharauf/Documents/UniLabs/DB Project/OnlyTeachers 2/bin/Debug/net7.0/runtimes/win/lib/net6.0/System.Security.Cryptography.ProtectedData.dll
+/Users/taaharauf/Documents/UniLabs/DB Project/OnlyTeachers 2/bin/Debug/net7.0/runtimes/win/lib/net6.0/System.Windows.Extensions.dll

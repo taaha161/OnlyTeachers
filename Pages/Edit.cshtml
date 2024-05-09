@@ -7,7 +7,7 @@
 
 <h2>Edit</h2>
 
-<h4>Contact</h4>
+<h4>Post</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -26,7 +26,13 @@
             </div>
             <div class="form-group">
                 <label asp-for="Post.content" class="control-label"></label>
-                <input asp-for="Post.content" class="form-control" />
+                <!-- Place the rich text editor directly here -->
+                <ejs-richtexteditor id="richTextEditor">
+                    <e-richtexteditor-iframesettings enable="true"></e-richtexteditor-iframesettings>
+                        <e-content-template>
+        @Html.Raw(Model.Post.content)
+    </e-content-template>
+                </ejs-richtexteditor>
                 <span asp-validation-for="Post.content" class="text-danger"></span>
             </div>
            
@@ -43,4 +49,17 @@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+        // Function to set the content of the rich text editor
+        function setContent(content) {
+            var rteObj = document.getElementById('richTextEditor').ej2_instances[0];
+            rteObj.value = content;
+        }
+
+        // Call the setContent function when the page is loaded
+        window.onload = function() {
+            // Assuming 'Model.Post.content' contains the content of your post
+            setContent('@Html.Raw(Model.Post.content)');
+        };
+    </script>
 }

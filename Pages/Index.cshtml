@@ -6,13 +6,7 @@
     ViewData["Title"] = "Index";
 }
 
-
-<h2>Index</h2>
-
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
-
+<h2>Posts</h2>
 
 <div class="post-grid">
     @foreach (var item in Model.Post)
@@ -23,11 +17,9 @@
                 <span class="post-date">@Html.DisplayFor(modelItem => item.PostDate)</span>
             </div>
             <div class="post-content">
-              <p>@Html.Raw(Model.GetPlainText(item.content))</p>
+                <p>@Html.Raw(Model.GetPlainText(item.content))</p>
             </div>
             <div class="post-details">
-                <span class="post-price">Price: @Html.DisplayFor(modelItem => item.Price)</span>
-                <span class="post-subscribers">Subscribers: @Html.DisplayFor(modelItem => item.subscribers)</span>
                 <span class="post-status">Status: @Html.DisplayFor(modelItem => item.Status)</span>
             </div>
             <div class="post-actions">
@@ -35,11 +27,7 @@
                 {
                     <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a>
                 }
-                   <a asp-page="./Details" asp-route-id="@item.Id" class="btn btn-primary">Details</a>
-             
-
-
-                
+                <a asp-page="./Details" asp-route-id="@item.Id" class="btn btn-secondary">Details</a>
                 @if ((await Model.AuthorizationService.AuthorizeAsync(User, item, new[] { ContactOperations.Delete })).Succeeded)
                 {
                     <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
@@ -48,7 +36,6 @@
         </div>
     }
 </div>
-
 
 <style>
     .post-grid {
@@ -59,45 +46,36 @@
     }
 
     .post-card {
-        background-color: #f9f9f9;
+        background-color: #ffffff;
         border-radius: 10px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         padding: 20px;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .post-card:hover {
+        transform: translateY(-5px);
     }
 
     .post-header h3 {
         margin: 0;
-        color: #333;
+        color: #333333;
     }
 
     .post-date {
-        color: #777;
+        color: #777777;
     }
 
     .post-content {
         margin-bottom: 10px;
+        color: #555555;
     }
 
     .post-details {
         margin-bottom: 10px;
     }
 
-    .post-details span {
-        margin-right: 10px;
-    }
-
     .post-actions .btn {
         margin-right: 10px;
     }
 </style>
-
-@* @section Scripts {
-    <script>
-        function showStudentPopup() {
-            var userType = '@Model.User.UserType';
-            if (userType === 'Student') {
-                $('#studentPopupModal').modal('show');
-            }
-        }
-    </script> *@
-}
