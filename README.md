@@ -85,3 +85,7 @@ This project is licensed under the [MIT License](LICENSE). Feel free to use, mod
 For any inquiries or support, please contact [your@email.com](mailto:your@email.com).
 
 ---
+
+### Screenshots:
+<img width="1427" alt="Screenshot 2024-06-24 at 5 24 35 AM" src="https://github.com/taaha161/OnlyTeachers/assets/21235756/76bc8b45-44a6-4b8e-a9f8-5c993a22adc1">
+
